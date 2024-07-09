@@ -1,0 +1,15 @@
+#root {
+
+}
+.app {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  padding: 32px 24px;
+  max-width: 1500px;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

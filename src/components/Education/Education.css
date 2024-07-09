@@ -1,0 +1,27 @@
+.education-details-container {
+  min-width: 425px;
+  height: fit-content;
+  width: 25%;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fdfbfb;
+  box-shadow: #7e7d7d 0px 2px 8px 0px;
+}
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.form-container {
+  padding: 8px;
+}
+.section-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px
+  }
+  .MuiInputBase-root {
+    box-sizing: border-box;
+    width: 100%;
+  }
