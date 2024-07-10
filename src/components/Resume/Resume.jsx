@@ -5,7 +5,13 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
 
-function Resume({ personalDetails, educationDetails }) {
+function Resume({ formMap }) {
+  const personalDetails = formMap.get("Personal Details")
+    ? formMap.get("Personal Details")
+    : "";
+  const educationDetails = formMap.get("Education")
+    ? formMap.get("Education")
+    : "";
 
   return (
     <>
@@ -20,23 +26,18 @@ function Resume({ personalDetails, educationDetails }) {
 }
 
 function PersonalDetailsSection({ sectionData }) {
-  if (Object.keys(sectionData).length !== 0) {
+  if (sectionData && !sectionData.isEmpty) {
     return (
       <section>
         <div className="personal-info-section">
           <Grid container spacing={2} minHeight={160}>
-            <Grid
-              xs
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-            >
+            <Grid xs display="flex" justifyContent="center" alignItems="center">
               <Box
                 sx={{
                   width: "100%",
                   alignSelf: "flex-start",
                   padding: "16px",
-                  bgcolor: '#a4003f',
+                  bgcolor: "#a4003f",
                   color: "white",
                 }}
               >
@@ -73,7 +74,7 @@ function PersonalDetailsSection({ sectionData }) {
 }
 
 function EducationDetailsSection({ sectionData }) {
-  if (Object.keys(sectionData).length !== 0) {
+  if (sectionData && !sectionData.isEmpty) {
     return (
       <section>
         <div className="education-info-section">
@@ -86,28 +87,24 @@ function EducationDetailsSection({ sectionData }) {
               color: "#a4003f",
             }}
           >
-            {sectionData && <h3> Education</h3>}
+            <h3> Education</h3>
           </Box>
           <div className="section-items-container">
             <div className="section-items-info-group">
-              {sectionData.datesAttended && (
-                <span>Sept 2013 - June 2017</span>
-              )}
+              {sectionData.datesAttended && <span>Sept 2013 - June 2017</span>}
               {sectionData.location && <span>Chicago, IL</span>}
             </div>
             <div className="section-items-info-group">
               {sectionData.school && (
                 <span className="info-header">DePaul University</span>
               )}
-              {sectionData.school && <span>Computer Science</span>}
+              {sectionData.fieldOfStudy && <span>Computer Science</span>}
             </div>
           </div>
         </div>
       </section>
     );
   }
- 
 }
-
 
 export default Resume;

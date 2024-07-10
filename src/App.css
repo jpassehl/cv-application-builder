@@ -13,3 +13,7 @@
   flex-direction: column;
   gap: 24px;
 }
+.MuiInputBase-root {
+  box-sizing: border-box;
+  width: 100%;
+}

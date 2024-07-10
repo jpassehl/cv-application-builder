@@ -6,6 +6,11 @@
   padding: 16px;
   background-color: #fdfbfb;
   box-shadow: #7e7d7d 0px 2px 8px 0px;
+
+  .accordion-container{
+    box-shadow: none;
+    background-color: unset;
+  }
 }
 .section-header {
   display: flex;
@@ -20,8 +25,4 @@
     display: flex;
     justify-content: flex-end;
     padding: 8px
-  }
-  .MuiInputBase-root {
-    box-sizing: border-box;
-    width: 100%;
   }

@@ -5,35 +5,20 @@ import Resume from "./components/Resume/Resume";
 import { useState } from "react";
 
 function App() {
-  const [personalDetailsForm, setPersonalDetailsForm] = useState("");
-  const [educationDetailsForm, setEducationDetailsForm] = useState("");
+  const [formMap, setFormMap] = useState(new Map());
 
-  console.log(Object.keys(personalDetailsForm).length !== 0);
-
-  const handleSaveForm = (formMap) => {
-    for (let key of formMap.keys()) {
-      switch (key) {
-        case "Personal Details":
-          setPersonalDetailsForm(formMap.get(key));
-        case "Education":
-          setEducationDetailsForm(formMap.get(key));
-        default:
-          "";
-      }
-    }
+  const handleSaveForm = (str, obj) => {
+    setFormMap((map) => new Map(map.set(str, obj)));
   };
 
   return (
     <>
       <div className="app">
         <div className="form-section">
-          <PersonalDetails handleSaveForm={handleSaveForm} />
-          <Education handleSaveForm={handleSaveForm} />
+          <PersonalDetails handleSaveForm={handleSaveForm} formMap={formMap} />
+          <Education handleSaveForm={handleSaveForm} formMap={formMap} />
         </div>
-        <Resume
-          personalDetails={personalDetailsForm}
-          educationDetails={educationDetailsForm}
-        />
+        <Resume formMap={formMap} />
       </div>
     </>
   );
