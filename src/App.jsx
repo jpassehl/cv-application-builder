@@ -3,6 +3,7 @@ import PersonalDetails from "./components/PersonalDetails/PersonalDetails";
 import Education from "./components/Education/Education";
 import Resume from "./components/Resume/Resume";
 import { useState } from "react";
+import FormAccordion from "./components/FormAccordion/FormAccordion";
 
 function App() {
   const [formMap, setFormMap] = useState(new Map());
