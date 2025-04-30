@@ -12,6 +12,9 @@ function Resume({ formMap }) {
   const educationDetails = formMap.get("Education")
     ? formMap.get("Education")
     : "";
+    const professionalExperience = formMap.get("Professional Experience")
+    ? formMap.get("Professional Experience")
+    : "";
 
   return (
     <>
@@ -19,6 +22,7 @@ function Resume({ formMap }) {
         <div className="resume-header">
           <PersonalDetailsSection sectionData={personalDetails} />
           <EducationDetailsSection sectionData={educationDetails} />
+          <ProfessionalExperienceSection sectionData={professionalExperience} />
         </div>
       </div>
     </>
@@ -91,14 +95,49 @@ function EducationDetailsSection({ sectionData }) {
           </Box>
           <div className="section-items-container">
             <div className="section-items-info-group">
-              {sectionData.datesAttended && <span>Sept 2013 - June 2017</span>}
-              {sectionData.location && <span>Chicago, IL</span>}
+              {sectionData.datesAttended && <span>{sectionData.datesAttended}</span>}
+              {sectionData.location && <span>{sectionData.location}</span>}
             </div>
             <div className="section-items-info-group">
               {sectionData.school && (
-                <span className="info-header">DePaul University</span>
+                <span className="info-header">{sectionData.school}</span>
               )}
-              {sectionData.fieldOfStudy && <span>Computer Science</span>}
+              {sectionData.fieldOfStudy && <span>{sectionData.fieldOfStudy}</span>}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
+
+function ProfessionalExperienceSection({ sectionData }) {
+  if (sectionData && !sectionData.isEmpty) {
+    return (
+      <section>
+        <div className="professional-experience-section">
+          <Box
+            sx={{
+              justifyContent: "center",
+              display: "flex",
+              bgcolor: "#FFEBEE",
+              marginBottom: "13px",
+              color: "#a4003f",
+            }}
+          >
+            <h3> Professional Experience </h3>
+          </Box>
+          <div className="section-items-container">
+            <div className="section-items-info-group">
+              {sectionData.datesWorked && <span>{sectionData.datesWorked}</span>}
+              {sectionData.location && <span>{sectionData.location}</span>}
+            </div>
+            <div className="section-items-info-group">
+              {sectionData.company && (
+                <span className="info-header">{sectionData.company}</span>
+              )}
+              {sectionData.jobTitle && <span>{sectionData.jobTitle}</span>}
+              {sectionData.description && <span style={{ marginTop: "4px" }}>{sectionData.description}</span>}
             </div>
           </div>
         </div>

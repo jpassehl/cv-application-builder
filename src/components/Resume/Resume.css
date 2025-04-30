@@ -22,7 +22,11 @@
 margin-top: 40px;
 padding: 0 56px;
 box-sizing: border-box;
-
+}
+.professional-experience-section{
+  margin-top: 40px;
+  padding: 0 56px;
+  box-sizing: border-box;
 }
 .header-icon {
   height: unset !important;
@@ -40,6 +44,7 @@ h3{
   .section-items-info-group {
     display: flex;
     flex-direction: column;
+    min-width: 150px;
 
     .info-header {
       font-weight: bold;

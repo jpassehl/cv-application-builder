@@ -3,7 +3,7 @@ import PersonalDetails from "./components/PersonalDetails/PersonalDetails";
 import Education from "./components/Education/Education";
 import Resume from "./components/Resume/Resume";
 import { useState } from "react";
-import FormAccordion from "./components/FormAccordion/FormAccordion";
+import ProfessionalExperience from "./components/ProfessionalExperience/ProfessionalExperience";
 
 function App() {
   const [formMap, setFormMap] = useState(new Map());
@@ -18,6 +18,7 @@ function App() {
         <div className="form-section">
           <PersonalDetails handleSaveForm={handleSaveForm} formMap={formMap} />
           <Education handleSaveForm={handleSaveForm} formMap={formMap} />
+          <ProfessionalExperience handleSaveForm={handleSaveForm} formMap={formMap} />
         </div>
         <Resume formMap={formMap} />
       </div>

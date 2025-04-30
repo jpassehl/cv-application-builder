@@ -1,16 +1,15 @@
-import * as React from "react";
 import { useState } from "react";
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import { FormControl } from "@mui/base/FormControl";
 import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
-import "./Education.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SchoolIcon from "@mui/icons-material/School";
+import '../../styles/Form.css';
 
 function Education(props) {
   const [studyField, setStudyField] = useState("");
@@ -35,7 +34,7 @@ function Education(props) {
 
   return (
     <>
-      <div className="education-details-container">
+      <div className="form-details-container">
       <Accordion className="accordion-container">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -91,7 +90,7 @@ function Education(props) {
 
 function FormItem({ label, placeholder, value, valueSetter }) {
   return (
-    <FormControl variant="standard">
+    <FormControl>
       <InputLabel>{label}</InputLabel>
       <Input
         placeholder={placeholder}

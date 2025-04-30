@@ -1,16 +1,15 @@
-import * as React from "react";
 import { useState } from "react";
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import { FormControl } from "@mui/base/FormControl";
 import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
-import "./PersonalDetails.css";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PersonIcon from "@mui/icons-material/Person";
+import '../../styles/Form.css';
 
 function PersonalDetails(props) {
   const [nameField, setNameField] = useState("");
@@ -35,7 +34,7 @@ function PersonalDetails(props) {
 
   return (
     <>
-      <div className="personal-details-container">
+      <div className="form-details-container">
         <Accordion defaultExpanded className="accordion-container">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <div className="section-header">
@@ -63,7 +62,7 @@ function PersonalDetails(props) {
                 ></FormItem>
                 <FormItem
                   label="Phone Number"
-                  placeholder="630-488-1251"
+                  placeholder="111-111-1111"
                   value={phoneNumberField}
                   valueSetter={setPhoneNumberField}
                 ></FormItem>
@@ -89,7 +88,7 @@ function PersonalDetails(props) {
 
 function FormItem({ label, placeholder, value, valueSetter }) {
   return (
-    <FormControl variant="standard">
+    <FormControl>
       <InputLabel>{label}</InputLabel>
       <Input
         placeholder={placeholder}
